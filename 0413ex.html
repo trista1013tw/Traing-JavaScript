@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/*
+1.請使用者輸入金錢
+2.如果輸入exit，中斷迴圈，結束程式
+3.如果輸入不是exit，執行判斷的程式碼，決定要怎麼回應使用者
+4.回到最上方，再請使用者輸入金錢，做第二次處裡
+*/
+
+let i=5;
+while(i>0){
+    let money=prompt("請輸入金額","");
+    if(money=="exit"){
+        console.log("取消交易");
+        break;
+    }
+    else{
+        if(money>100000){
+            console.log("金額太大無法領取")
+            console.log("您還剩"+(i-1)+"次機會");
+        }
+        else{
+            if(money%1000!=0){
+                console.log("輸入金額格式不符，本機僅提供千元")
+                console.log("您還剩"+(i-1)+"次機會");
+            }
+            else{
+                console.log("請取走"+money+"元整");
+                let choice=prompt("還要再領嗎?輸入任意樹繼續，exit離開");
+                if(choice=="exit"){
+                    console.log("取消交易");
+                    break;
+                }      
+            }
+        }
+    }
+    i--;
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <!--
+        javascrip外部連結方式：
+        與CSS是相同技術，在<head>標籤裡面加入<script src="檔案名稱.js"></script>
+    -->
+<script>
+        function print(){
+        let today= new Date();
+        document.write(today.toDateString());
+        }
+    print();
+    let say=prompt("你想要對我說甚麼嗎?","");
+        function printString(mes){
+            document.write(mes);
+        }
+    printString(say);
+    //再附上外部JS檔案給網頁時，需要指定URL(檔案在網路上的路徑)。
+    /*路徑種類：
+        1.絕對路徑：帶有完整資訊以供瀏覽器從網路世界任一處尋找答案，若是檔案與網頁不在同伺服器上，必須使用絕對路徑，絕對路徑包括http://、主機名稱(hostname)、目錄及檔案名稱。Ex.http://www.uptospeedguid.com/scripts/site.js
+        2.跟目錄相對路徑：只是檔案與跟目錄的相對位置，路徑不包括http://，從/開始，斜線表示跟目錄。Ex.http://www.uptospeedguid.com/index.html 的跟目錄相對路徑是/index.html
+        3.文件相對路徑：表示網頁與JS檔案的路徑，網站有多層次目錄時，會需要以多種路徑來指向同一個JS檔案。Ex. ../表示回到上層資料夾；/表示到下層資料夾
+    */
+    document.write("<p>I'm not.</p>");
+    let i=1,ans;
+    while(i<=7){
+        ans=2*i
+        console.log(ans);
+        document.write(ans+" ");
+        i++
+    }
+    /*建構變數：
+    變數名稱必須以字母、$或_開頭，數字與其他符號是不允許的，且區分大小寫。避免使用JS內建關鍵字。
+    可以一次宣告多個變數。Ex. var x,y,z;
+    */
+   
+   
+   //JS陣列，內容放數字、字串、布林值都可以
+    let days=["Mon","Tues","Wed","Thurs","Fri","Sat","Sun"];
+    alert(days[0]);
+    console.log(days);
+    days[0]="Monday";
+    alert(days[0]);
+    console.log(days);
+    days.unshift("happy"); 
+    console.log(days);
+    //把新的元素加到陣列最前方，.push()是將新元素加到最後方
+    //.pop()刪除最後一項元素，.shift()刪除第一個元素
+    let removeItem=days.shift();
+    let x=1;
+    while(x<=7){
+        document.write("today is  ");
+        document.write(days[(x-1)]+"  ");
+        x++;
+    }
+    for(let num=1;num<=7;num++){
+        console.log(days[(num-1)]);
+    }
+    console.log(removeItem);
+    console.log(days);
+    
+    let enteredColor=prompt("你希望背景是甚麼顏色呢?","");
+    switch(enteredColor){
+        case "red":
+            document.body.style.backgroundColor="red";
+            break;
+        case "yellow":
+            document.body.style.backgroundColor="yellow";
+            break;
+        case "green":
+            document.body.style.backgroundColor="green";
+            break;
+        case "black":
+            document.body.style.backgroundColor="black";
+            break;
+        default:
+            document.body.style.backgroundColor="white";
+            console.log("erro");
+    }
+    let bir = prompt("猜猜我甚麼星座","");
+    if(bir!="天秤座"){
+        alert("不對不對!");
+    }
+    else{
+        alert("哇~答對了");
+    }
+
+</script>
+<!--下次重P.103開始讀 運用jQuery
+JS&jQuery 312.32J36/4434/c.2-->
+</body>
+</html>

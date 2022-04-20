@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //城市可以接受的資料種類：數字、字串、布林值、空值
+        /*
+        多行註解跟CSS一樣
+        請注意：註解太多會導致程式下在速度變慢
+        */
+        console.log("hello");
+        console.log("hello2");
+        //數字
+        1.5
+        2.432
+        -1
+        0
+        234
+        //字串
+        "我是可愛的孩子";
+        '開開心心';
+        //布林值
+        true;
+        false;
+        //空值
+        null;
+        undefined;
+        //console.log(資料);  在console印出資料，中文字代表彈性可動的
+        console.log(true);
+        console.log(2.5);
+        console.log(undefined);
+        //變數：存放資料的名字，沒有定義就沒有變數
+        //建立變數-->使用變數
+        let x=999
+        var y=2
+        console.log(x);
+        console.log(y);
+        //算術運算：+、-、*、/
+        console.log(x+y);
+        console.log(y-x);
+        console.log(x**y);
+        console.log(parseInt(x/y)); //取整數商要用到parseInt()
+        x=2+3*4;
+        console.log(x);
+        x+1;
+        console.log(x);//答案會等於45行，因為46並沒有更新改變x
+        //指定運算：=,+=,-=,*=,/=
+        x+=1
+        console.log(x);
+        //比較運算：>,<,>=,<=,==(相等)
+        //!=(不相等),===("嚴格"strict相等)不只比較值，還比較值的型別"2"==2為true;"2"===2為false
+        console.log(x>y,x<y,x>=y,x<=y,x==y);
+        console.log("java"=="Java");
+        //邏輯運算：&&,||
+        let z=true&&false;
+        console.log(z);
+        z=true||false;
+        console.log(z);
+        /*
+           a   b   a&&b   and(且)
+           o   o     o
+           o   x     x
+           x   o     x 
+           x   x     x
+
+           a   b   a||b   or(或)
+           o   o     o
+           o   x     o
+           x   o     o
+           x   x     x
+           */
+        //單元運算：++,--,!  針對一個資料做運算
+        y=10;
+        y--;
+        console.log(y);
+        z=!true; //!為反向運算
+        console.log(z);
+        let i=10;
+        console.log(x&&i,x||i);
+        x="wow";
+        console.log(x+y);
+        let a;
+        console.log(a);
+        a=true;
+        console.log(a);
+
+        //要求使用者輸入prompt(字串,字串);
+        let w=prompt("請輸入數字","");
+        console.log(w);
+        console.log(isNaN(w));
+        if(isNaN(w)){
+            alert("請輸入有效數字！");
+        }
+        else{
+            let q=prompt("請輸入第二個數字","");
+            console.log(q);
+            if(isNaN(q)){
+                alert("請輸入有效數字！");
+            }
+            else{
+                alert("魔法生效，剛剛兩個答案相乘囉！");
+                console.log(w*q);
+            }
+        }
+
+        
+        //padaLab@gmail.com彭彭老師的信箱，有問題可以寄信詢問~~
+
+        //if判斷式
+        /*if(布林值){
+            若是布林值為true，執行這個程式區塊的程式碼
+        }
+        else{
+            若是布林值為false，執行這個程式區域的程式碼
+        }
+        */
+       let money=prompt("請問要提領多少錢","");
+       if(money<=100000){
+           if(money>=100){
+               if(money%100==0){
+                    console.log("請記得取走鈔票")
+               }
+               else{
+                   console.log("提款機無法給硬幣，請重新試過")
+               }
+           }
+           else{
+               console.log("金額不足，無法領取")
+           }
+       }
+       else{
+           console.log("一次只能提領100000以下金額，請重新再試。")
+       }
+
+       /*
+       1.輸入超過十萬，太多了不行
+       2.輸入不到一百，太少了不行
+       3.中間輸出都可以OK
+       */
+
+/*  if(布林值){
+        如果上方的布林值是true，執行這個區域的程式碼，否則往下繼續判斷
+    }
+    else if(布林值){
+        如果上方的布林值是true，執行這個區域的程式碼，否則往下繼續判斷
+    }
+    else if(布林值){
+        如果上方的布林值是true，執行這個區域的程式碼，否則往下繼續判斷
+    }
+    ...
+    else{
+        如果上方的布林值是false，執行這個區域的程式碼，否則往下繼續判斷
+    }*/
+    </script>
+</body>
+</html>

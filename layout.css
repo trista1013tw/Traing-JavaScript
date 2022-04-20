@@ -1,0 +1,61 @@
+.head{
+    background-color: aqua;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    padding: 10px;
+}
+.welcome{
+    background-color: greenyellow;
+    height: 200px;
+    display: flex;
+    align-items: center; /*垂直對齊*/
+    justify-content: center;
+}
+.profile{
+    background:radial-gradient(pink,yellow);
+    padding: 10px 20px;
+    text-align: end;
+}
+.row{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    /*水平對齊方式*/
+    flex-wrap: wrap;
+    /*允許空間不夠時區塊往下排列*/
+}
+.box{
+    width: 200px;
+    background-color: pink;
+    margin: 10px;
+}
+/* CSS media Query 回應式網頁*/
+/*RWD(Responsive Web Design)*/
+@media(max-width:1200px){
+    .box{
+        width: 45%;
+        background-color: pink;
+        margin: 10px;
+    }
+}
+@media(max-width:500px){
+    .box{
+        width: 90%;
+        background-color: pink;
+        margin: 10px;
+    }
+}
+/*
+配置空間(排版)的方法：
+1.<table>  少用
+2.CSS Float (clearfix)  少用
+3.display：inline-block
+4.CSS Flexbox
+5.CSS Grid
+以上如果用了一套，從頭到尾都要用同一套
+Ex.置中問題：inline-block要用的是text-align:center
+但是Flexbox要使用的是align-items: center;垂直對齊、
+justify-content: center;
+水平對齊方式
+*/  

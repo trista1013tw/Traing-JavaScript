@@ -1,0 +1,6 @@
+body{background-color: aqua;}
+        .title{font-weight: bold;font-size: 36px;}
+        .content{width:50%;background:radial-gradient(yellow,orange)}
+        .keyword{color: red;font-size: 24px;font-weight: bold;}
+        .underline{text-decoration: underline;}
+

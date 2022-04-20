@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for迴圈、函式</title>
+</head>
+<body>
+    <script>
+        //for 迴圈
+        /*
+        for(初始化的命令,進入迴圈之前執行一次;布林值;每次進入下一圈前，執行一次){
+            如果布林值是true，執行這個區塊
+            執行到最後，回到迴圈開頭，再來一次
+        }
+        */
+//    let total=0;
+//    for(let n=1;n<=50;n++){
+//        total=total+n;
+//    }
+//    console.log(total);
+
+
+       /*
+       請在console印出
+       1 apple
+       2 apples
+       3 apples
+       ...
+       11apples
+       1 dozen apples
+       13 apples
+       */
+// for(let a=1;a<=60;a++){
+//     if(a%12==0){
+//         console.log(a/12+" dozen apples");
+//     }
+//     else if(a==1){
+//         console.log(a+" apple");
+//     }
+//     else{
+//         console.log(a+" apples");
+//     }
+// }
+
+    //內建函式      prompt(字串、字串);
+    //自己寫的函式
+    //建立函式>>呼叫函式
+    /*function 函式名稱(參數名稱列表){
+        函式區塊內的程式碼
+    }*/
+    
+    function show(mes){
+        console.log(mes);
+        document.write(mes);
+    }
+    show(prompt("請輸入內容","")); //呼叫函式
+    show(prompt("請輸入內容",""));
+
+    // function test(aaa){
+    //     console.log(aaa);
+    // }
+    // test("ya");
+    let x=prompt("x","");
+    let y=prompt("y","");
+    function add(x,y){
+        console.log(x);
+        console.log(y);
+        //console.log(x+y);
+        return x+y; //結束函式，可以帶回傳值到函式的外部：return 資料(符合語法的都行);
+    }
+    let result=add(parseInt(x),parseInt(y));
+    console.log(result);
+
+
+    function calculate(i){
+        let total=0;
+        for(let q=1;q<=i;q++){
+            total=total+q;
+        }
+        console.log(total);
+        return total;
+    }
+    let re=calculate(50)+calculate(100);
+    console.log(re);
+
+/*
+詢問使用者是否同意，如果使用者不同意回傳false,如果使用者同意回傳true
+confirm(字串);
+
+1.利用confirm();詢問使用者是否同意刪除資料
+2.如果使用者同意，在console印出[已刪除]
+3.如果使用不同意，忽略、不做任何事情
+*/
+
+
+function del(){
+    return confirm("同意刪除資料?");
+}
+let ans=del();
+if(ans==true){
+    console.log("已刪除");
+    document.write("已刪除");
+}
+
+/*
+回家作業
+九九乘法表(使用兩層回圈)
+1x1=1
+1x2=2
+1x3=3
+...
+2x1=2
+2x2=4
+2x3=6
+...
+9x9=81
+
+殘缺的九九乘法表(使用兩層回圈)
+前面都是奇數
+1x1=1
+1x2=2
+1x3=3
+...
+1x9=9
+3x1=3
+3x2=6
+...
+9x9=81
+
+開根號，請使用者輸入一個正整數，使用者迴圈計算開根號的結果(只要取整數即可)
+*/
+
+//變數的使用範圍(Scope)
+/*
+    變數可以在城市的那些地方被使用?
+    1.注意let建立變數的位置(宣告變數的位置)
+    2.注意使用變數的位置
+    3.已程式區塊為界線，內部的程式區域可以使用外部建立的變數(已建立變數的位置為基數，對內部有效)
+*/
+
+if(true){
+    let p=3;
+    p++;
+    if(true){
+        console.log(p);//裡面印得出來
+    }
+}
+console.log(p);//外面印不出來
+    </script>
+</body>
+</html>

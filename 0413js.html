@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/*
+    迴圈
+    while迴圈
+    while(布林值){
+      如果布林值是true，執行這個城市區塊
+    }
+*/
+let i=5;
+while(i>0){
+    let money=prompt("請輸入金額(本ATM僅提供千元鈔票，且最高提領金額為100000元整)","");
+    if(money>100000){
+        alert("金額過大無法提領，請重新輸入");
+        console.log("金額過大無法提領，請重新輸入");
+        console.log("您還有"+(i-1)+"次嘗試機會");
+        alert("您還有"+(i-1)+"次嘗試機會");
+    }
+    else{
+        if(money==0){
+                alert("取消交易");
+                console.log("取消交易");
+                break;
+        }
+        else{
+            if(money%1000==0){
+            alert("成功提領"+money+"元整，請記得取走現金，謝謝");
+            console.log("成功提領"+money+"元整，請記得取走現金，謝謝");
+            break;
+            }
+            else{
+                alert("輸入金額錯誤，提醒您，本ATM僅提供千元鈔票");
+                console.log("輸入金額錯誤，提醒您，本ATM僅提供千元鈔票")
+                alert("您還有"+(i-1)+"次嘗試機會");
+                console.log("您還有"+(i-1)+"次嘗試機會");
+            }
+            
+        }
+    }
+    i--;
+}
+console.log(i);
+    </script>
+</body>
+</html>

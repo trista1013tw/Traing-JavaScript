@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九九乘法表</title>
+</head>
+<body>
+<script>
+    console.log("九九乘法表")
+    for(let i=1;i<10;i++){
+        for(let j=1;j<10;j++){
+            console.log(i+"x"+j+"="+i*j);
+        }
+    }
+    
+    console.log("殘缺的九九乘法表")
+    for(let x=1;x<10;x++){
+        if(x%2!=0){
+            //console.log(x);
+            for(let y=1;y<10;y++){
+                console.log(x+"x"+y+"="+x*y);
+            }
+        }
+    }
+
+    console.log("開根號求整數位置(好難喔...)")
+    let num=prompt("請輸入正整數","1");
+    num=parseInt(num);
+    //console.log(num);
+    for(let z=1;num>=z*z;z++){
+        if(num<(z+1)*(z+1)){
+            console.log(z);
+        }
+    }
+    console.log("程式結束");
+</script>
+</body>
+</html>
