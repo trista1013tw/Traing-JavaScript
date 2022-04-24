@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DOM</title>
+    <style>
+        .test{
+            font-size: 36px;
+            color:brown;
+            background-color: goldenrod;
+        }
+        #pic{
+            transition: width 0.3s, height 0.3s;
+            /*position:fixed*/
+        }
+    </style>
+</head>
+<body>
+    <h3 id="title">HTML DOM Practice</h3>
+    <div id="content">測試HTML DOM概念</div>
+    <button onclick="change();">改變頁面鈕</button>
+    <button onclick="back();">恢復CSS</button>
+    <button onclick="disapear();">隱藏標題</button>
+    <button onclick="show();">顯示標題</button>
+    <img src="images.jpg" width="30%" height="15%" id="pic" onclick="exchange();"/>
+<script>
+    //HTML DOM:就是window物件
+    //改變網頁顏色
+    //印出網頁的HTML程式碼(body標籤內部的程式碼)
+    /*
+    console.dir(window.document.body);
+    console.log(window.document.body.innerHTML);
+    console.log(window.document.bgColor="aqua");
+    */
+   function disapear(){
+       let element=document.querySelector("#title");
+       element.style.display="none";
+   };
+   function show(){
+        let element=document.querySelector("#title");
+        element.style.display="block";
+   };
+   function change(){
+       /*
+       改變整個body
+       window.document.body.innerHTML="<h3>要玩心理測驗嗎?</h3> <button>好</button> <button>不要</button>";
+       */
+
+       //部分修正
+       //1.取得想要調整的標籤 document.querySelector("CSS選擇器")
+        let element=document.querySelector("#content");
+       //2.修改標籤的各種設定
+       //2.1修改標籤的HTML屬性
+       element.innerHTML="練習HTML DOM概念";
+       element.className="test";
+       //2.3修改標籤單一的CSS屬性：標籤物件.style.css屬性
+       console.log(element.style);
+       element.style.fontWeight="bold";
+   };
+   function back(){
+        let element=document.getElementById("content");
+        element.classList.remove("test");
+   };
+   
+   function exchange(){
+       let element=document.getElementById("pic");
+       console.log(element.src);
+        if(element.src=="file:///C:/Tina/training/JavaScript/images.jpg"){
+            element.src="changeback.png"
+            element.style.width="60%";
+            element.style.height="30%";
+
+        }
+        else if(element.src=="file:///C:/Tina/training/JavaScript/changeback.png"){
+            element.src="images.jpg"
+            element.style.width="30%";
+            element.style.height="15%";
+        }
+        
+   };
+</script>
+</body>
+</html>

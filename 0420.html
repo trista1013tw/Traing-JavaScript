@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+<body>
+<script>
+    /*
+    let 函式名稱=function(參數名稱列表){
+        函示區塊內的程式碼
+    }
+    */
+    //資料：數字、字串、布林值、空值、函式
+    let add=function add(n1,n2){
+        return n1+n2;
+    };
+    console.log(add);
+    console.log(add(2,5));
+    let newName=add;
+    console.log(newName(3,7));
+    let result=add+3; //函示會變成字串然後加上3，雖沒有錯誤程式可以跑，但是沒有意義
+    console.log(result);
+    /*
+    箭頭函式(節省打function的時間XD)
+    let 函式名稱=(參數名稱列表)=>{
+        函式區塊內的程式碼
+        return 回傳值;
+    };
+
+    let 函式名稱=(參數名稱列表)=>(回傳值);  -->不能多放其他的程式碼
+    */
+   let sqr=(num1)=>(num1*num1)
+   console.log(sqr(4)); //16
+
+   //資料：數字、字串、布林值、空值、函式、物件
+   //物件：用來存放其他資料的容器
+   //建立物件>使用物件
+
+   //一.最基本的物件建立方式
+   let point=new Object(); //建立空白物件 new Object()
+   //建立物件的成員
+   //   -屬性：成員的資料不是函式
+   //   -方法：成員的資料是函式
+   point.x=3; //物件.成員名稱=資料;(物件的屬性)
+   point.y=10;
+   point.show=function(){
+       //(物件的方法)
+       /*
+        this是函式的綁定物件(Binding Object)
+            -物件的方法裡面使用this，代表物件本身
+       */
+       console.log(this);
+       console.log(this.x,this.y);
+   };
+   //使用物件(x是包裝在point變數裡面的資料)
+   console.log(point.x+point.y);
+   point.show();
+
+   /*
+   請建立一個物件，放在person變數裡面,有以下成員：
+   -name 字串：代表名字
+   -age 整數：代表年齡
+   -talk 函式：印出名字和年齡
+   */
+   function ad(){
+       console.log(this);
+   };
+   ad();
+   let pp=new Object();
+   pp.name="阿呆";
+   pp.age=13;
+   pp.talk=function(){
+       console.log(this);
+       console.log(pp.name,pp.age);
+   };
+   pp.talk();
+
+   //二.使用JSON建立物件(JavaScript Object Notation)
+   //{成員名稱:資料,成員名稱:資料...}
+   let dot={
+       i:3,
+       j:4,
+       boo:true,
+       show:function(){
+       console.log(this.i,this.j);
+       }
+    };
+    dot.l="long";
+   console.log(dot);
+
+   let cha={
+       name:"拉拉",
+       age:20,
+       talk:function(){
+       console.log(this.name,this.age);
+       }
+    };
+    console.log(cha);
+
+    //三.使用建構函式建立物件(Constructor)
+    //先決定要包裝建立物件程序時，要採取普通函式還是建構函式
+    function Dot(x,y){
+        //建構函式自動產生新的空白物件，放在建構函式的this中
+        this.x=x;
+        this.y=y;
+        this.show=function(){
+            console.log(this.x,this.y);
+        };
+        //return this;   建構函式自動回傳this     
+    };
+    //呼叫建構函式:new 建構函式名稱(參數資料列表);
+    let Dot1=new Dot(0,0);
+    let Dot2=new Dot(3,4);
+    console.log(Dot1);
+    console.log(Dot2);
+//函式的名稱習慣用動詞開頭
+//但是建構函式喜歡用名詞，且第一個字母大寫
+    
+/*
+    承上，完成一個person建構式
+    建立兩個person物件，有不同的名字和年齡
+*/
+
+    function Person(name,age){
+        this.name=name;
+        this.age=age;
+        this.show= function(){
+            console.log(this.name,this.age);
+        };
+    };
+    let person1=new Person("amy",55);
+    let person2=new Person("Ted",60);
+    console.log(person1);
+    console.log(person2);
+
+    //使用內建的物件 console
+    console.log(Person);
+    console.info(Person);
+    console.warn(Person);
+    //使用內建物件 window
+    console.log(window.innerHeight,window.innerWidth,window.document);
+    //window.location.href="https://www.youtube.com.tw"; 改變網頁位置
+</script>
+</body>
+</html>

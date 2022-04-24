@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Search Box</h3>
+    <div>
+        <span id="page" style="font-weight: bold;" onclick="changeToPage();">Page</span>
+        <span id="img" onclick="changeToImage();">Image</span>
+    </div>
+    <div>
+    <input type="text"/>
+    <input id="btn" type="button" value="Page Search"/>
+    </div>
+<script>
+    let page= document.getElementById("page");
+    let img= document.getElementById("img");
+    let btn= document.getElementById("btn");
+    function changeToImage(){
+        /*
+        let page= document.getElementById("page");
+        let img= document.getElementById("img");
+        let btn= document.getElementById("btn");
+        */
+        page.style.fontWeight="normal";
+        img.style.fontWeight="bold";
+        btn.value="Image Search";
+    };
+    function changeToPage(){
+        /*
+        let page= document.getElementById("page");
+        let img= document.getElementById("img");
+        let btn= document.getElementById("btn");
+        */
+        page.style.fontWeight="bold";
+        img.style.fontWeight="normal";
+        btn.value="Page Search";
+    };
+    //標準動作:1.取得修改標籤 2.修改
+
+    /*
+    作業-標籤選單：
+    基本-出現基本資料
+    學經-學歷經歷
+    作品-相關作品
+    */
+</script>
+</body>
+</html>
