@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handing</title>
+</head>
+<body>
+    <h3>基本的事件處理</h3>
+    <span onclick="JavaScript程式碼">點我</span>
+    <span id="sp" style="background-color: #cccccc;"
+    onclick="console.log('點擊事件');"
+    ondblclick="console.log('快速點兩下');"
+    onmouseover="Over(this);"
+    onmouseout="Out(this);"
+    onmousedown="Down(this);"
+    onmouseup="Up(this);"
+    >點我</span>
+    <div style="width: 100px;"
+    onmouseover="Over(this);"
+    onmouseout="Out(this);"
+    onmousedown="Down(this);"
+    onmouseup="Up(this);"
+    >測試一行字</div>
+<script>
+    function Down(Word){
+        Word.style.fontWeight="bold";
+        console.log('滑鼠按下事件');
+    }
+    function Up(Word){
+        Word.style.fontWeight="normal";
+        console.log('滑鼠放開事件');
+    }
+    function Over(Word){
+        //console.log(this);
+        Word.style.color="red";
+        console.log("滑鼠移入事件");
+    }
+    function Out(Word){
+        Word.style.color='black';
+        console.log("滑鼠移出事件");
+    }   
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陣列練習</title>
+</head>
+<body>
+<h3>算出學生平均成績</h3>
+學生數量<input id="num" type="text"/>
+<button onclick="test();">點擊開始計算</button>
+<div id="ans"></div>
+
+<script>
+function test(){
+    let num=document.getElementById("num").value;
+    let data=[];
+    let sum=0;
+    let ans=document.getElementById("ans");
+    for(let i=0;i<num;i++){
+        data[i]=parseInt(prompt("請輸入學生成績",""));
+    }
+    for(i=0;i<data.length;i++){
+        sum=data[i]+sum;
+    }
+    ans.innerHTML=sum/data.length;
+}
+</script>
+</body>
+</html>

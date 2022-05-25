@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handing</title>
+</head>
+<body>
+    <h3>使用JavaScript做事件處理</h3>
+    <!--<button onclick="console.log('Hello');">點我</button>-->
+    <button id="btn">點我</button>
+    <script>
+        //事件處理三重點：1.事件的種類 2.事件的觸發對象 3.事件處理函式
+        let btn=document.getElementById("btn");
+        //標籤物件.addEventListener("事件處理種類的名稱(扣除on，全部小寫)",事件處理函式);
+        let EventHandler=function(e){
+            //console.log("Event Object",e);
+            //btn.removeEventListener("click",EventHandler);
+            console.log(e.clientX,e.clientY);
+            if(e.ctrlKey){
+                btn.removeEventListener("click",EventHandler);
+            }
+        };
+        btn.addEventListener("click",EventHandler);
+        
+        let mouseOver=function(){
+            console.log("滑鼠移入");
+        }
+        btn.addEventListener("mouseover",mouseOver);
+        let mouseOut=function(){
+            console.log("滑鼠移出");
+        }
+        btn.addEventListener("mouseout",mouseOut);
+        /*
+        事件物件(Event Object)：
+        1.幫助我們取得事件發生的相關資訊，透過事件處理函式的第一個參數取得
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排程</title>
+</head>
+<body>
+<h3>JavaScript排程</h3>
+<div id="timer">3</div>
+<script>
+    //等待一段時間之後，在執行函式一次 window.setTimeout(要執行的函式,等待時間) --->只執行一次，除非一直約
+    //每隔一段時間，執行函式一次 window.setInterval(要執行的韓式,間隔時間)
+    function countdown(){
+        let timer=document.getElementById("timer");
+        timer.innerHTML=timer.innerHTML-1;
+        //console.log("時間到了，執行");
+        if(timer.innerHTML>0){
+            window.setTimeout(countdown,1000);
+        }
+        else if(timer.innerHTML==0){
+            timer.innerHTML="歡迎!!";
+        }
+    }
+    //window.setTimeout(countdown,1000); //非同步的程式
+
+    function count(){
+        let timer=document.getElementById("timer");
+        timer.innerHTML=timer.innerText-1;
+        if(timer.innerHTML==0){
+            timer.innerHTML="成功";
+            window.clearInterval(n1); //利用排程編號，清除排程
+        }
+    }
+    let n1=window.setInterval(count,1000); //設定排程，可以取得排程編號
+</script>
+</body>
+</html>

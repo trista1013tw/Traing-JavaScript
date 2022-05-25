@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array陣列物件</title>
+</head>
+<body>
+    <h3>操作陣列</h3>
+    學生數量<input id="n" type="text"/>
+    <button onclick="test();">點擊開始</button>
+    <div id="ans"></div>
+<script>
+    //陣列：按照順序，存放其他資料的容器
+    //建立陣列
+    function test(){
+        let data=[]; //建立空白的陣列
+        data[0]=60;  //陣列[編號]=資料
+        data[1]=70;
+        data.push(45); //陣列.push(資料)
+        data.push(80);
+        console.log(data.length);
+        console.log(data);
+        //計算成績的平均數
+        //逐一取得陣列資料的迴圈
+        let total=0;
+        for(let i=0;i<data.length;i++){
+            //console.log(data[i]);
+            total=total+data[i];
+        }
+        let avg=total/data.length;
+        console.log(avg);
+    }
+</script>
+</body>
+</html>

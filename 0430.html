@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字串物件</title>
+</head>
+<body>
+    <h3>測試字串物件</h3>
+    <input type="text" id="input" value="Hello"/>
+    <button onclick="ch();">檢查</button>
+    <script>
+        //字串物件
+        function check(){
+            let text=document.getElementById("input");
+            console.log("取得字串的長度：",text.value.length);
+            console.log("取得第二個字元：",text.value.charAt(1))
+            console.log("全部轉成大寫：",text.value.toUpperCase());
+            console.log("是否已http開頭?",text.value.startsWith("http"));
+            console.log("取得子字串ell?",text.value.substring(1,4));
+            console.log("搜尋字串中是否包含abc?",text.value.indexOf("abc")); //如果有存在會顯示字元的開頭位置(數字)，若是沒有會顯示-1(不存在)
+            console.log("搜尋字串中是否包含llo?",text.value.indexOf("lo"));
+        }
+        function ch(){
+            let text=document.getElementById("input").value;
+            if (text==""){
+                console.warn("警告，您沒有輸入任何資料");
+            }
+            else if(text.length>20){
+                console.warn("警告，您資料太過冗長");
+            }
+            else if(text.toUpperCase().indexOf("FUCK")>-1){
+                console.warn("請勿使用不雅字詞");
+            }
+            else if(text.toUpperCase().indexOf("白癡")>-1){
+                console.warn("請勿使用不雅字詞");
+            }
+        }
+    </script>
+</body>
+</html>

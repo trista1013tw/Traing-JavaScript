@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chasing mouse</title>
+</head>
+<body>
+    <h3>追蹤滑鼠的座標位置</h3>
+    <div id="d"></div>
+    <script>
+        let D=document.getElementById("d");
+        let mousemoveHandler=function(e){
+            //console.log("Event Objct",e);
+            //console.log(e.clientX,e.clientY);
+           D.innerHTML='('+e.clientX+','+e.clientY+')';
+        };
+
+
+        let i=1;
+        
+        function StopUpDate(){
+            document.removeEventListener("mousemove",mousemoveHandler);
+        }
+        function UpDate(){
+            document.addEventListener("mousemove",mousemoveHandler);
+        }
+        function add(){
+            if(i%2==0){
+            UpDate();
+            }
+            else{
+            StopUpDate();
+            }
+            i++;
+        }
+        document.addEventListener("mousemove",mousemoveHandler);
+        //document.addEventListener("click",StopUpDate);
+        document.addEventListener("click",add);
+    /*
+    作業一：追蹤滑鼠座標，顯示主畫面中
+    作業二：可以透過按鈕停止滑鼠座標，以及恢復滑鼠座標
+    */
+    </script>
+</body>
+</html>
