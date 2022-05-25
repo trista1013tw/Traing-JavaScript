@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件處理作業-onclick</title>
+    <style>
+        .choice{
+            padding: 30px;
+            font-weight: normal;
+            color: black;
+            background-color: white;
+            text-decoration: none;
+        }
+        .tag{
+            padding: 30px;
+            color: blue;
+            background-color: rgb(194, 190, 190);
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; justify-content: end;">
+    <div class="choice" id="mes" onclick="changeMes();showMessage();">
+        <h3>基本資料</h3>
+    </div>
+    <div class="choice" id="sch" onclick="changeSch();showSchool();">
+        <h3>學歷經歷</h3>
+    </div>
+    <div class="choice" id="pro" onclick="changePro();showProfolio();">
+        <h3>相關作品</h3>
+    </div>
+    </div>
+    <div id="mesage" style="display: none;">
+        基本資料：Tina
+        <br>等級：26
+        <br>性別：女
+    </div>
+    <div id="school" style="display: none;">
+        最高學歷：大學
+        <br>經歷：HTML、CSS、JavaScript、PS
+    </div>
+    <div id="profolio" style="display: none;">
+        <h3>PS複雜圖去背作業(點擊圖片更換背景)</h3>
+        <img src="images.jpg" id="img" style="height: 30%;width: 60%;" onclick="changeImg();"/>
+    </div>
+<script>
+let mes=document.getElementById("mes");
+let sch=document.getElementById("sch");
+let pro=document.getElementById("pro");
+let mesage=document.getElementById("mesage");
+let school=document.getElementById("school");
+let profolio=document.getElementById("profolio");
+
+
+function changeMes(){
+    mes.className="tag";
+    sch.className="choice";
+    pro.className="choice";
+};
+function changeSch(){
+    mes.className="choice";
+    sch.className="tag";
+    pro.className="choice";
+};
+function changePro(){
+    mes.className="choice";
+    sch.className="choice";
+    pro.className="tag";
+};
+function showMessage(){
+    mesage.style.display="block";
+    school.style.display="none";
+    profolio.style.display="none";
+};
+function showSchool(){
+    mesage.style.display="none";
+    school.style.display="block";
+    profolio.style.display="none";
+};
+function showProfolio(){
+    mesage.style.display="none";
+    school.style.display="none";
+    profolio.style.display="block";
+};
+function changeImg(){
+    let img=document.getElementById("img");
+    if(img.src=="file:///C:/Tina/training/JavaScript/images.jpg"){
+            img.src="changeback.png";
+            img.style.width="60%";
+            img.style.height="30%";
+
+    }
+    else if(img.src=="file:///C:/Tina/training/JavaScript/changeback.png"){
+        img.src="images.jpg";
+        img.style.width="60%";
+        img.style.height="30%";
+    }
+};
+</script>
+</body>
+</html>
