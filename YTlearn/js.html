@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>第一個javascript</title>
+    <script type="text/javascript">
+        /*alert("大家好");
+        alert("我是網站主人~");
+        alert(3<4);
+        alert(3==3.0);*/
+        //alert():輸出;prompt(提示語,預設值):輸入-->程式運算-->輸出:alert(資料)
+        var name=prompt("請輸入名字");
+        alert(name+"你好");
+        var sum=0;
+        var n=1;
+        while(n<=50){
+            sum=sum+n;
+            n++;
+        }
+        var x=0;
+        alert(sum);
+        for(i=0;i<11;i++){
+            if(i%10==0){
+                continue
+            }
+            x++;
+        }
+        alert(x);
+
+        var c=0;
+        for(i=0;i<3;i++){
+            for(j=0;j<3;j++){
+                if(i!=j){
+                    c=c-1
+                }
+            }
+        }
+        alert(c);
+        /*if(達成條件){如果達成條件要做的運算}*/
+    </script>
+</head>
+<body>
+</body>
+</html>

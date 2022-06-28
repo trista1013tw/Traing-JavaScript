@@ -1,0 +1,32 @@
+﻿body{margin:0px}
+nav{display: flex;}
+nav>.logo{
+    flex:none;
+    background-color: #ffcccc;
+}
+nav>.menu{
+    background-color: #ccccff;
+}
+nav>.usr{
+    background-color: #ccffcc;
+}
+main{
+    display:flex ;flex-wrap: wrap;/*自動換行*/
+    justify-content: center;
+    background-color: #cccccc;
+}
+main>.item{
+    flex: none;
+    width: 270px;margin:10px;
+    background-color:#ffcccc;
+}
+@media(max-width:1200px){
+    main>.item{
+        width:45%;
+    }
+}
+@media(max-width:500px){
+    main>.item{
+        width:90%
+    }
+}
